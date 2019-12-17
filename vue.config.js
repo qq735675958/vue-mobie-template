@@ -3,10 +3,11 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 
+const env = ["prod", "test"].includes(process.env.NODE_ENV);
+
 module.exports = {
   // 项目部署的基础路径
-  // 那么将这个值改为 `/my-app/`
-  publicPath: "./",
+  publicPath: env ? "./" : "/",
   // 将构建好的文件输出到哪里
   outputDir: "dist",
   // 放置静态资源的地方 (js/css/img/font/...)
@@ -16,7 +17,7 @@ module.exports = {
   lintOnSave: false,
   runtimeCompiler: true, //是否使用包含运行时编译器的 Vue 构建版本
   // 是否为生产环境构建生成 source map？
-  productionSourceMap: true,
+  productionSourceMap: false,
   // 调整内部的 webpack 配置。
   // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/webpack.md
   chainWebpack: config => {
@@ -49,9 +50,7 @@ module.exports = {
     port: 8080,
     https: false,
     hotOnly: false,
-    // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/cli-service.md#配置代理
-    proxy: null, // string | Object
-    before: app => {}
+    proxy: null // string | Object
   },
   // 三方插件的选项
   pluginOptions: {}

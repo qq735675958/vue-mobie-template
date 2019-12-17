@@ -5,6 +5,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "dev:build": "vue-cli-service build --mode dev",
+    "test:build": "vue-cli-service build --mode test",
+    "prod:build": "vue-cli-service build --mode prod",
+    "deploy:dev": "npm run dev:build && cross-env NODE_ENV=dev node ./deploy",
+    "deploy:test": "npm run test:build && cross-env NODE_ENV=test node ./deploy",
+    "deploy:prod": "npm run prod:build && cross-env NODE_ENV=prod node ./deploy",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
@@ -31,6 +37,7 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.3",
     "babel-plugin-import": "^1.13.0",
+    "cross-env": "^6.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^5.0.0",
@@ -38,6 +45,7 @@
     "less-loader": "^5.0.0",
     "postcss-pxtorem": "^4.0.1",
     "prettier": "^1.19.1",
+    "scp2": "^0.5.0",
     "vue-template-compiler": "^2.6.10"
   }
 }
