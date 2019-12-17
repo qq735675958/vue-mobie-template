@@ -4,15 +4,19 @@
 ```
 yarn install
 ```
+### 一键打包发布 并且上传到对应环境的服务器
+### Compiles and hot-reloads for development and deploy to serve Nginx
+```
+deploy:dev
+```
 
-### Compiles and hot-reloads for development
+### Compiles and minifies for test and deploy to serve Nginx
 ```
-yarn serve
+deploy:test
 ```
-
-### Compiles and minifies for production
+### Compiles and minifies for production and deploy to serve Nginx
 ```
-yarn build
+deploy:build
 ```
 
 ### Run your unit tests
