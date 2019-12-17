@@ -3,9 +3,10 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
-import 'amfe-flexible';
-import '@/plugins/vant-ui';
-
+import "amfe-flexible";
+import "@/plugins/vant-ui";
+import "@/static/base.less";
+import "./permission";
 Vue.config.productionTip = false;
 
 new Vue({
