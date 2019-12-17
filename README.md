@@ -7,16 +7,16 @@ yarn install
 ### 一键打包发布 并且上传到对应环境的服务器
 ### Compiles and hot-reloads for development and deploy to serve Nginx
 ```
-deploy:dev
+yarn  deploy:dev
 ```
 
 ### Compiles and minifies for test and deploy to serve Nginx
 ```
-deploy:test
+yarn  deploy:test
 ```
 ### Compiles and minifies for production and deploy to serve Nginx
 ```
-deploy:build
+yarn  deploy:build
 ```
 
 ### Run your unit tests
