@@ -2,31 +2,47 @@
   <div class="login">
     <div class="login-box">
       <div class="user-avtor">
-        <van-image round
+        <van-image
+          round
           fit="cover"
           width="2rem"
           height="2rem"
-          src="https://img.yzcdn.cn/vant/cat.jpeg" />
+          src="https://img.yzcdn.cn/vant/cat.jpeg"
+        />
       </div>
 
       <van-cell-group>
-        <van-field v-model="username"
+        <van-field
+          v-model="username"
           required
           clearable
           label="用户名"
-          placeholder="请输入用户名" />
-        <van-field v-model="password"
+          placeholder="请输入用户名"
+        />
+        <van-field
+          v-model="password"
           type="password"
           label="密码"
           clearable
           placeholder="请输入密码"
-          required />
+          required
+        />
       </van-cell-group>
+      <div>
+        <van-row type="flex" justify="center">
+          <van-col span="16">
+            <van-button type="primary" size="large" @click="login"
+              >登录</van-button
+            >
+          </van-col>
+        </van-row>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   name: "login",
   components: {},
@@ -36,7 +52,13 @@ export default {
       password: ""
     };
   },
-  methods: {}
+  methods: {
+    ...mapActions(["set_user_info"]),
+    login() {
+      this.set_user_info("Token-----");
+      this.$router.push(this.$route.query.redirect || "/");
+    }
+  }
 };
 </script>
 <style lang="less" scoped>

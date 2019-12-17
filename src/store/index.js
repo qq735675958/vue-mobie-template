@@ -7,7 +7,15 @@ export default new Vuex.Store({
   state: {
     token: ""
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    SET_USERINFO(state, info) {
+      state.token = info;
+    }
+  },
+  actions: {
+    set_user_info({ commit }, data) {
+      commit("SET_USERINFO", data);
+    }
+  },
   modules: {}
 });
