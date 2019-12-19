@@ -32,6 +32,7 @@ scpClient.scp(
 );
 
 
+
 function main(){
   try {
     compressing.zip.compressDir('./dist', './dist.zip')
