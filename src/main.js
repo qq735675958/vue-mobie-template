@@ -7,6 +7,7 @@ import "amfe-flexible";
 import "@/plugins/vant-ui";
 import "@/static/base.less";
 import "./permission";
+import "@/mock";
 Vue.config.productionTip = false;
 
 new Vue({
