@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build && cross-env NODE_ENV=dev node ./deploy",
     "dev:build": "vue-cli-service build --mode dev",
     "test:build": "vue-cli-service build --mode test",
     "prod:build": "vue-cli-service build --mode prod",
@@ -38,6 +38,7 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.3",
     "babel-plugin-import": "^1.13.0",
+    "compressing": "^1.5.0",
     "cross-env": "^6.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.1",

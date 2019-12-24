@@ -12,6 +12,7 @@ const envfile =
     : "../.env.dev";
 // env环境变量的路径
 const envPath = path.resolve(__dirname, envfile);
+
 // env对象
 const envObj = parse(fs.readFileSync(envPath, "utf8"));
 const SERVER_ID = parseInt(envObj["VUE_APP_SERVER_ID"]);
